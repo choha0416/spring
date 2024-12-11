@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.spring.ex04.MemberVO" alias="memberVO"/>  
+    	<!--<typeAlias type="com.spring.ex02.MemberVO2" alias="memberVO2"/>-->
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="oracle.jdbc.OracleDriver" />
+                <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+                <property name="username" value="system" />
+                <property name="password" value="oracle" />
+            </dataSource>
+        </environment>
+    </environments>
+    
+    <mappers>
+        <mapper resource="mybatis/mappers/member.xml"/>
+    </mappers>
+    
+</configuration>
